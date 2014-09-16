@@ -1,11 +1,9 @@
 package dip.lab2;
 
 // An useful import if you need it.
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 // Another useful import if you need it.
-import javax.swing.JOptionPane;
+
 
 /**
  * Just a test class for input and output.
@@ -24,14 +22,14 @@ public class Startup {
 
     public static void main(String[] args) {
         
-        DecimalFormat df = new DecimalFormat("##.00");
+        DecimalFormat df = new DecimalFormat("##.00");   
         
-        TipCalculatorService tcs = new TipCalculatorService(new BaggageServiceTipCalculator(
-            ServiceQuality.GOOD, 3));
+//        TipCalculatorService tcs = new TipCalculatorService(new BaggageServiceTipCalculator(
+//            ServiceQuality.GOOD, 3));
         
-//        TipCalculatorService tcs = new TipCalculatorService(new FoodServiceTipCalculator(
-//            ServiceQuality.POOR, 30));
-        
+        TipCalculatorService tcs = new TipCalculatorService(new FoodServiceTipCalculator(
+            ServiceQuality.POOR, 30));
+
         System.out.println("The tip amount is: $" + df.format(tcs.getTip()));
     }
 

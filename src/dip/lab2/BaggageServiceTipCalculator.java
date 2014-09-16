@@ -42,7 +42,7 @@ public class BaggageServiceTipCalculator implements TipCalculator{
     }
     
     @Override
-    public final void setServiceRating(ServiceQuality q) {
+    public void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
@@ -56,10 +56,10 @@ public class BaggageServiceTipCalculator implements TipCalculator{
         return bagCount;
     }
 
-    public final void setBagCount(int bagCount) {
+    public void setBagCount(int bagCount) {
         if(bagCount < 0) {
             throw new IllegalArgumentException(
-                    "bag count must be greater than or equal to zero");
+                    "Bag count must be greater than or equal to zero.");
         }
         this.bagCount = bagCount;
     }
@@ -71,7 +71,7 @@ public class BaggageServiceTipCalculator implements TipCalculator{
     public void setBaseTipPerBag(double baseTipPerBag) {
         if(baseTipPerBag < 0) {
             throw new IllegalArgumentException(
-                    "error: base tip must be greater than or equal to zero");
+                    "Error: Base tip must be greater than or equal to zero.");
         }
         this.baseTipPerBag = baseTipPerBag;
     }
