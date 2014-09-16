@@ -25,9 +25,11 @@ public class Startup {
         
         DecimalFormat df = new DecimalFormat("##.00");
         
-        TipCalculatorService tcs = new TipCalculatorService(new BaggageServiceTipCalculator(
-            ServiceQuality.GOOD, 3));
+//        TipCalculatorService tcs = new TipCalculatorService(new BaggageServiceTipCalculator(
+//            ServiceQuality.GOOD, 3));
         
+        TipCalculatorService tcs = new TipCalculatorService(new FoodServiceTipCalculator(
+            ServiceQuality.POOR, 30));
         
         System.out.println("The tip amount is: " + df.format(tcs.getTip()));
     }
