@@ -6,10 +6,12 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class SalariedEmployee extends Employee {
+public class SalariedEmployee implements Employee {
 
     /** default constructor. Is this the best way to go? */
     public SalariedEmployee() {}
+        private double annualSalary;
+        private double annualBonus;
 
     /**
      * Convenience constructor. Is this the best way to go?
@@ -19,6 +21,29 @@ public class SalariedEmployee extends Employee {
     public SalariedEmployee(double annualSalary, double annualBonus) {
         setAnnualSalary(annualSalary);
         setAnnualBonus(annualBonus);
+    }
+
+    public double getAnnualSalary() {
+        return annualSalary;
+    }
+
+    public void setAnnualSalary(double annualSalary) {
+        this.annualSalary = annualSalary;
+    }
+
+    public double getAnnualBonus() {
+        return annualBonus;
+    }
+
+    public void setAnnualBonus(double annualBonus) {
+        this.annualBonus = annualBonus;
+    }
+    
+    
+
+    @Override
+    public double getTotalPay() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
