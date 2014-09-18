@@ -7,7 +7,11 @@ import javax.swing.JOptionPane;
  */
 public class HRService {
     
-    private Employee[] employees = new Employee[0];
+    private Employee[] employees;
+    
+    public HRService(){
+        employees = new Employee[0];
+    }
     
     public void addEmployee(Employee employee){
         Employee[] temp = new Employee[employees.length + 1];
