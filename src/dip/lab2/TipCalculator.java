@@ -11,12 +11,8 @@ package dip.lab2;
  * @author eennis
  */
 public interface TipCalculator {
-    
-    public static final double GOOD_RATE = 0.20;
-    public static final double FAIR_RATE = 0.15;
-    public static final double POOR_RATE = 0.10;
-    
-    public double getTip();
+
+    public double getCalculatedTip();
     public void setServiceRating(ServiceQuality q);
     public ServiceQuality getServiceQuality();
     

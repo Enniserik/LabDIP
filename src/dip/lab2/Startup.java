@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
  *    high-level class. Did it work? Are the low-level instances
  *    interchangeable? The DIP requires this.
  * 
- * @author your name goes here
+ * @author eennis
  */
 public class Startup {
 
@@ -30,7 +30,7 @@ public class Startup {
         TipCalculatorService tcs = new TipCalculatorService(new FoodServiceTipCalculator(
             ServiceQuality.POOR, 30));
 
-        System.out.println("The tip amount is: $" + df.format(tcs.getTip()));
+        System.out.println("The tip amount is: $" + df.format(tcs.getCalculatedTip()));
     }
 
 }

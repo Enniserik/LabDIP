@@ -12,7 +12,11 @@ public class BaggageServiceTipCalculator implements TipCalculator{
 
     private double baseTipPerBag;
     private int bagCount;
-
+    
+    private double goodRate = 0.15;
+    private double fairRate = 0.10;
+    private double poorRate = 0.05;
+    
     private ServiceQuality serviceQuality;
 
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
@@ -23,18 +27,18 @@ public class BaggageServiceTipCalculator implements TipCalculator{
     }
     
     @Override
-    public double getTip() {
+    public double getCalculatedTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
@@ -76,4 +80,30 @@ public class BaggageServiceTipCalculator implements TipCalculator{
         this.baseTipPerBag = baseTipPerBag;
     }
 
+    public double getGoodRate() {
+        return goodRate;
+    }
+
+    public void setGoodRate(double goodRate) {
+        this.goodRate = goodRate;
+    }
+
+    public double getFairRate() {
+        return fairRate;
+    }
+
+    public void setFairRate(double fairRate) {
+        this.fairRate = fairRate;
+    }
+
+    public double getPoorRate() {
+        return poorRate;
+    }
+
+    public void setPoorRate(double poorRate) {
+        this.poorRate = poorRate;
+    }
+
+    
+    
 }

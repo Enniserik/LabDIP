@@ -18,8 +18,8 @@ public class TipCalculatorService {
         this.tc = tc;
     }
     
-    public double getTip(){
-        return tc.getTip();
+    public double getCalculatedTip(){
+        return tc.getCalculatedTip();
     }
     
 }

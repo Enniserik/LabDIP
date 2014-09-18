@@ -12,6 +12,10 @@ public class FoodServiceTipCalculator implements TipCalculator {
     
     private double minBill = 0.00;
     
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
+    
     private double bill;
     private ServiceQuality serviceQuality;
 
@@ -21,18 +25,18 @@ public class FoodServiceTipCalculator implements TipCalculator {
     }
     
     @Override
-    public double getTip() {
+    public double getCalculatedTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
             case GOOD:
-                tip = bill * GOOD_RATE;
+                tip = bill * goodRate;
                 break;
             case FAIR:
-                tip = bill * FAIR_RATE;
+                tip = bill * fairRate;
                 break;
             case POOR:
-                tip = bill * POOR_RATE;
+                tip = bill * poorRate;
                 break;
         }
         return tip;
@@ -63,5 +67,31 @@ public class FoodServiceTipCalculator implements TipCalculator {
     public void setMinBill(double minBill) {
         this.minBill = minBill;
     }
+
+    public double getGoodRate() {
+        return goodRate;
+    }
+
+    public void setGoodRate(double goodRate) {
+        this.goodRate = goodRate;
+    }
+
+    public double getFairRate() {
+        return fairRate;
+    }
+
+    public void setFairRate(double fairRate) {
+        this.fairRate = fairRate;
+    }
+
+    public double getPoorRate() {
+        return poorRate;
+    }
+
+    public void setPoorRate(double poorRate) {
+        this.poorRate = poorRate;
+    }
+    
+    
     
 }
