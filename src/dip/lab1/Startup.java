@@ -12,15 +12,17 @@ public class Startup {
     
     public static void main(String[] args) {
 
-        HRService hr1 = new HRService(new HourlyEmployee(10.50, 2020));
-        HRService hr2 = new HRService(new SalariedEmployee(45000, 1250));
+        HRService hrService = new HRService();
+
+        hrService.addEmployee(new HourlyEmployee(10.50, 2020, 101));
+        hrService.addEmployee(new SalariedEmployee(45000, 1250, 102));
 
         NumberFormat nf = NumberFormat.getCurrencyInstance();
 
-        System.out.println("Employee 1 annual compensation: " +
-            nf.format(hr1.getAnnualCompensationForEmployee()));
+        System.out.println("Employee 1 monthly compensation: " +
+            nf.format(hrService.getCompensationForEmployee(PaymentType.MONTHLY, 101)));
         System.out.println("Employee 2 annual compensation: " +
-            nf.format(hr2.getAnnualCompensationForEmployee()));
+            nf.format(hrService.getCompensationForEmployee(PaymentType.ANNUALY, 102)));
 
         
     }

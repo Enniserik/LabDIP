@@ -7,14 +7,22 @@ import javax.swing.JOptionPane;
  */
 public class HRService {
     
-    private Employee employee;
+    private Employee[] employees = new Employee[0];
     
-    public HRService(Employee employee){
-        this.employee = employee;
+    public void addEmployee(Employee employee){
+        Employee[] temp = new Employee[employees.length + 1];
+        System.arraycopy(employees, 0, temp, 0, employees.length);
+        temp[employees.length] = employee;
+        employees = temp;
     }
     
-    public double getAnnualCompensationForEmployee(){
-        return employee.getTotalPay();
+    public double getCompensationForEmployee(PaymentType payType, int empNo){
+        for(int i = 0; i < employees.length; i++){
+            if(employees[i].getEmpNo() == empNo){
+                return employees[i].getTotalPay(payType);
+            }
+        }
+        return 0;
     }
 
 }
