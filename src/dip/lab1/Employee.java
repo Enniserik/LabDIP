@@ -1,14 +1,14 @@
 package dip.lab1;
 
 /**
- * The concrete super class of all employee types. What's wrong with this class?
- * Find and fix all encapsulation, DIP and best practice problems learned
- * so far.
  *
- * @author your name goes here
+ * @author eennis
  */
 public interface Employee {
     
+    //public int getEmpNo();
+    //Each type of Employee will need a empNo int that is passed in at instantiation
+    //(can be changed)
     public double getTotalPay();
     
 }
