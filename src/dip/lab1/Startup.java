@@ -12,9 +12,8 @@ public class Startup {
     
     public static void main(String[] args) {
 
-        HRService hrService = new HRService();
+        HRService hrService = new HRService(new HourlyEmployee(10.50, 2020, 101));
 
-        hrService.addEmployee(new HourlyEmployee(10.50, 2020, 101));
         hrService.addEmployee(new SalariedEmployee(45000, 1250, 102));
 
         NumberFormat nf = NumberFormat.getCurrencyInstance();
