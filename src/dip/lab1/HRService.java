@@ -1,7 +1,5 @@
 package dip.lab1;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author eennis
  */
@@ -9,12 +7,15 @@ public class HRService {
     
     private Employee[] employees;
     
-    public HRService(){
+    public HRService(Employee e){
         employees = new Employee[0];
+        addEmployee(e);
     }
     
     public void addEmployee(Employee employee){
         
+        
+        //Should addEmployee be responsible for validation?
         for(int i = 0; i < employees.length; i++){
             if(employee.getEmpNo() == employees[i].getEmpNo()){
                 throw new UnsupportedOperationException("There is already an employee"
